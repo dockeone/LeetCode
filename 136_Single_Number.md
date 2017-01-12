@@ -61,3 +61,36 @@ public class Solution {
     }
 }
 ```
+
+# 重新解决
+
+---
+
+像这类问题，可以使用异或来解决。主要是利用了 
+
+`x ^ x = 0` 
+
+以及 
+
+`x ^ 0 = x` 
+
+那么就会有 
+
+`x ^ y ^ y ^ z ^ z .... = x`
+
+这样就可以求出这个单一的 x。代码如下：
+
+```
+public static char findTheDifference(String s, String t) {
+    int result = 0;
+    for(int i = 0 ; i < s.length(); ++i){
+        result ^= s.charAt(i);
+    }
+
+    for(int i = 0; i < t.length(); ++i){
+        result ^= t.charAt(i);
+    }
+
+    return (char) result;
+}
+```
