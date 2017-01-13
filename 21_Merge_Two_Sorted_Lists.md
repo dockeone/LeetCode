@@ -1,13 +1,13 @@
-# Question
+# 题目
 
 Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
 
-# Thought
+# 思路
 
 ***题目意思：*** 有两个已经排序好的链表，需要合并成一个链表
 ***思路：*** 有一个 move 指针，然后可以一直移动。
 
-# Solution
+# 解决办法
 
 ```
 /**
@@ -96,7 +96,8 @@ public class Solution {
         }
         return mergeHead;
     }
-}```
+}
+```
 
 总结：1. 服务器端无论如何都需要做参数验证。2. 尽量看看节省内存
 

@@ -1,4 +1,4 @@
-# Question
+# 题目
 
 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
@@ -19,7 +19,7 @@ The return format had been changed to zero-based indices. Please read the above 
 
 Subscribe to see which companies asked this question
 
-# My Thought
+# 思路
 
 ***题目的意思是***：给一个数组，有一堆数，然后再给一个数X，问你，在数组中哪个位置和哪个位置相加可以得到 这个数X。
 
@@ -33,12 +33,9 @@ Ps: 这种优化方式有2个缺点：
 2. 空间复杂度需要 O(n)，因为题目的意思是找出这个数组中的哪个位置和哪个位置的数，经过排序后，这个位置都乱套了，所以要先 copy 这个数组，空间复杂度就上来了。 但是，如果在业务需求中，只是求哪个数和哪个数，不要求位置，那么这个优化方式还是可以考虑的。
 
 
-# My Solution
-
+# 解决方法
 
 ```
-package com.test;
-
 public class Solution {
     public int[] twoSum(int[] nums, int target) {
         int sol[] = new int[2];
@@ -59,7 +56,7 @@ public class Solution {
 }
 ```
 
-## Discuss Online
+# Discuss Online
 
 在 LeetCode 的 Discuss 中，有人实现了 时间复杂度为 O(n)。
 它是怎么做的呢：
@@ -81,8 +78,4 @@ public int[] twoSum(int[] numbers, int target) {
 ```
 这确实用了另外一种思路，就是 通过 哈希表。先把这个数组的数一个个放进 哈希表中，放的同时，判断是不是 a + b = c。这样，后面的数也就不用判断了。这个算法 在 Run Time 为 6ms ，能够打败 58.39% 的人。
 但是这种算法 忽略了一点创建 map 是需要空间的。但是整体来说还是要优于傻瓜式的 O(n^2) 的方式。
-
-#Summary
-
-匹配，查找，多考虑下 HashMap 的方式。
 

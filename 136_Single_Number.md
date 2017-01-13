@@ -1,5 +1,4 @@
-# Question
----
+# 题目
 
 Given an array of integers, every element appears twice except for one. Find that single one.
 
@@ -7,15 +6,13 @@ Note:
 
 Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
 
-# Thought
----
+# 思路
 
 题目意思： 给定一个 int 数组，全部的数都出现了两次，只有一个数只出现一次，找到这个数。
 
 思路： 由于最好不要创建额外的空间，那么只能在原数组中做。而且需要接近线性的时间，所以个人感觉首先是要先排序，比如说快排的时间复杂度为 O(nlogn)，再遍历查找即可 O(n)。
 
-# Solution
----
+# 实现代码
 
 ```
 public class Solution {
@@ -63,8 +60,6 @@ public class Solution {
 ```
 
 # 重新解决
-
----
 
 像这类问题，可以使用异或来解决。主要是利用了 
 

@@ -1,14 +1,14 @@
-# Question
+# 题目
 
 Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
 
-# Thought
+# 思路
 
 ***题目意思：*** 给定一个int型数组，如果有重复的数，那么就 return TRUE，否则就return FALSE；
 
 ***思路：*** 直接使用 HashSet，利用Set 不能保存重复的数这一特征，然后判断存入的数的个数和原来的 nums的长度是否相等。
 
-# Solution
+# 解决办法
 
 ```
 public class Solution {
@@ -21,6 +21,10 @@ public class Solution {
     }
 }
 ```
+
+# 解决思路2
+
+上述的利用 HashSet 的方法需要全部数组都遍历一遍，那么此时可以参考 1_two_numbers 这个题目，它利用的是 HashMap，每次put 的时候就判断下有没有，这里可以利用这点优化一下，如下 disscuss 中。
 
 # Discuss Online
 
