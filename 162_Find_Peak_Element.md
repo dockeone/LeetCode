@@ -51,7 +51,7 @@ public class Solution {
 
 发现上述我这种实现需要 O(n)的时间复杂度，但是其实也可以找到最大值，那么最大值其实肯定就是 peak element了。这样时间复杂度还是 O(nlgn)。那么实现可以如下：
 
-```
+```java
 public class Solution {
     public int findPeakElement(int[] nums) {
         
@@ -98,14 +98,19 @@ public class Solution {
     }
     
     private  int getPivot(final int[] nums,final int start,final int end) {
-        int left = nums[start];
-        int middle = nums[ (start + end) / 2];
-        int right = nums[end];
+        int s = nums[start];
+        int m = nums[(start + end) / 2];
+        int e = nums[end];
 
-        if(left >= middle && left >= right) return start;
-        if(middle >= left && middle >= right) return (start + end) / 2;
-        if(right >= left && right >= middle) return end;
-
+        if((s >= m) && (s >= e)){
+            return m >= e ? e : m;
+        }
+        if((m >= s) && (m >= e)){
+            return s >= e ? e : s;
+        }
+        if((e >= s) && (e >= m)){
+            return s >= m ? m : s;
+        }
         return -1;
     }
 }
