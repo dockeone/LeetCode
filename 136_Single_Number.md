@@ -14,7 +14,7 @@ Your algorithm should have a linear runtime complexity. Could you implement it w
 
 # 实现代码
 
-```
+```java
 public class Solution {
     public int singleNumber(int[] nums) {
         
@@ -75,17 +75,15 @@ public class Solution {
 
 这样就可以求出这个单一的 x。代码如下：
 
-```
-public static char findTheDifference(String s, String t) {
-    int result = 0;
-    for(int i = 0 ; i < s.length(); ++i){
-        result ^= s.charAt(i);
-    }
+```java
+public class Solution {
+    public int singleNumber(int[] nums) {
+        int n = 0;
+        for(int i = 0; i < nums.length; ++i){
+            n ^= nums[i];
+        }
 
-    for(int i = 0; i < t.length(); ++i){
-        result ^= t.charAt(i);
+        return n;
     }
-
-    return (char) result;
 }
 ```
